@@ -1,0 +1,145 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    @include desde(md){
+        flex-direction: row;
+    }
+    &-left{
+        //height: 100%;
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include desde(sm){
+            padding: 80px 80px;
+        }
+        @include desde(md){
+            width: 50%;
+           // height: 100%;
+        }
+    }
+    &-right{
+        width: 50%;
+        height: 270px;
+        bottom: 0;
+        right: 0;
+        //background-color: tomato;
+        position: absolute;
+        @include desde(md){
+            position: relative;
+            width: 50%;
+            height: 100%
+        }
+    }
+    &-top{
+        display: flex;
+        align-items: center;
+        //justify-content: space-between;
+    }
+    &-center{
+        @include desde(sm){
+            width: 70%;
+        }
+        @include desde(sm){
+            width: 100%;
+            padding-left: 170px;
+        }
+        @include desde(lg){
+            width: 70%;
+        }
+        @include desde(xl){
+            padding-left: 230px;
+        }
+    }
+    &-bottom{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        //background-color: teal;
+        margin-bottom: 110px;
+        z-index: 1;
+        @include desde(sm){
+            margin-bottom: 50px;
+        }
+        @include desde(md){
+            margin-bottom: 0;
+            margin-left: 170px;
+            width: calc(100% - 170px);
+            //background-color: teal;
+        }
+        @include desde(xl){
+            margin-left: 230px;
+            width: calc(100% - 230px);
+        }
+    }
+}
+
+.enova{
+    &-img{
+        width: 110px;
+        height: auto;
+        @include desde(xl){
+            width: 160px;
+        }
+    }
+    &-separador{
+        color: white;
+        margin: 0 15px;
+        @include desde(md){
+            margin: 0 25px;
+        }
+        @include desde(xl){
+            margin: 0 35px;
+        }
+    }
+    &-slogan{
+        text-transform: uppercase;
+        color: white;
+        font-size: 9px;
+        letter-spacing: 3px;
+        @include desde(xl){
+            font-size: 14px;
+        }
+    }
+    &-title{
+        letter-spacing: 4px;
+        color: white;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 1.9;
+        font-weight: 300;
+        @include desde(xl){
+            font-size: 30px;
+        }
+    }
+    &-btn{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: solid 1px gold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        @include desde(xl){
+            width: 60px;
+            height: 60px;
+        }
+    }
+    &-icon{
+        color: gold;
+        cursor: pointer;
+        @include desde(xl){
+            font-size: 24px;
+        }
+    }
+    
+}
