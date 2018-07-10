@@ -378,8 +378,12 @@ th {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
-      flex-direction: row; } }
+      flex-direction: row;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; } }
   .wrapper-left {
+    height: 80vh;
     padding: 20px 15px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -396,7 +400,12 @@ th {
         padding: 80px 80px; } }
     @media screen and (min-width: 1024px) {
       .wrapper-left {
-        width: 50%; } }
+        width: 50%;
+        padding-left: 40px;
+        padding-top: 40px; } }
+    @media screen and (min-width: 1440px) {
+      .wrapper-left {
+        margin-left: 7%; } }
   .wrapper-right {
     width: 50%;
     height: 270px;
@@ -415,19 +424,17 @@ th {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
-  @media screen and (min-width: 768px) {
-    .wrapper-center {
-      width: 70%; } }
-  @media screen and (min-width: 768px) {
-    .wrapper-center {
-      width: 100%;
-      padding-left: 170px; } }
-  @media screen and (min-width: 1201px) {
-    .wrapper-center {
-      width: 70%; } }
-  @media screen and (min-width: 1440px) {
-    .wrapper-center {
-      padding-left: 230px; } }
+    @media screen and (min-width: 1024px) {
+      .wrapper-top {
+        margin-top: 20px; } }
+  .wrapper-center {
+    width: 100%; }
+    @media screen and (min-width: 1024px) {
+      .wrapper-center {
+        margin-left: 170px; } }
+    @media screen and (min-width: 1440px) {
+      .wrapper-center {
+        padding-left: 70px; } }
   .wrapper-bottom {
     width: 100%;
     height: 50px;
@@ -446,11 +453,12 @@ th {
       .wrapper-bottom {
         margin-bottom: 0;
         margin-left: 170px;
-        width: calc(100% - 170px); } }
+        width: calc(100% - 170px);
+        margin-bottom: 20px; } }
     @media screen and (min-width: 1440px) {
       .wrapper-bottom {
-        margin-left: 230px;
-        width: calc(100% - 230px); } }
+        margin-left: 250px;
+        width: calc(100% - 250px); } }
 
 .enova-img {
   width: 110px;
@@ -472,28 +480,36 @@ th {
 .enova-slogan {
   text-transform: uppercase;
   color: white;
-  font-size: 9px;
-  letter-spacing: 3px; }
+  letter-spacing: 6px;
+  font-weight: 300;
+  font-size: 8px; }
   @media screen and (min-width: 1440px) {
     .enova-slogan {
       font-size: 14px; } }
 
 .enova-title {
   letter-spacing: 4px;
-  color: white;
   text-transform: uppercase;
   font-size: 20px;
   line-height: 1.9;
-  font-weight: 300; }
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0); }
+  @media screen and (min-width: 768px) {
+    .enova-title {
+      font-size: 26px; } }
+  @media screen and (min-width: 1024px) {
+    .enova-title {
+      font-size: 24px;
+      line-height: 2.2; } }
   @media screen and (min-width: 1440px) {
     .enova-title {
       font-size: 30px; } }
 
 .enova-btn {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  border: solid 1px gold;
+  border: solid 2px #e1ba65;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -510,8 +526,26 @@ th {
       height: 60px; } }
 
 .enova-icon {
-  color: gold;
+  color: #e1ba65;
   cursor: pointer; }
   @media screen and (min-width: 1440px) {
     .enova-icon {
       font-size: 24px; } }
+
+@-webkit-keyframes fadIn {
+  0% {
+    color: rgba(255, 255, 255, 0); }
+  100% {
+    color: rgba(255, 255, 255, 0.6); } }
+
+@keyframes fadIn {
+  0% {
+    color: rgba(255, 255, 255, 0); }
+  100% {
+    color: rgba(255, 255, 255, 0.6); } }
+
+.fadeIn {
+  -webkit-animation: fadIn 2s;
+  animation: fadIn 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
