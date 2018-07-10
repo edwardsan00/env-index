@@ -70,7 +70,6 @@
           })
           return ordenados.concat(sinOrdenar)
         }
-        console.log(arrayRandom(destacada))
         arrayRandom(destacada).map((e, i) => {
           setTimeout(function(){
             e.classList.add('fadeIn')
@@ -82,7 +81,7 @@
           const title = $('.enova-title');
           title.animate({
             'color': 'rgba(255,255,255, .6)'
-          }, 3000);
+          }, 2500);
         }, 2000)
 
         setTimeout(function(){
