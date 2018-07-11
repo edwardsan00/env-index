@@ -1,0 +1,131 @@
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes fadIn {
+  0% {
+    color: rgba(255, 255, 255, 0); }
+  100% {
+    color: rgba(255, 255, 255, 0.6); } }
+
+@keyframes fadIn {
+  0% {
+    color: rgba(255, 255, 255, 0); }
+  100% {
+    color: rgba(255, 255, 255, 0.6); } }
+
+@-webkit-keyframes reducirMask {
+  0% {
+    width: 100vw;
+    height: 100vh; }
+  100% {
+    width: calc(100vw - 30px);
+    height: calc(100vh - 30px); } }
+
+@keyframes reducirMask {
+  0% {
+    width: 100vw;
+    height: 100vh; }
+  100% {
+    width: calc(100vw - 30px);
+    height: calc(100vh - 30px); } }
+
+@media screen and (min-width: 400px) {
+  @-webkit-keyframes reducirMask {
+    0% {
+      width: 100vw;
+      height: 100vh; }
+    100% {
+      width: calc(100vw - 50px);
+      height: calc(100vh - 100px); } }
+  @keyframes reducirMask {
+    0% {
+      width: 100vw;
+      height: 100vh; }
+    100% {
+      width: calc(100vw - 50px);
+      height: calc(100vh - 100px); } } }
+
+@media screen and (min-width: 1024px) {
+  @-webkit-keyframes reducirMask {
+    0% {
+      width: 100vw;
+      height: 100vh; }
+    100% {
+      width: calc(100vw - 160px);
+      height: calc(100vh - 100px); } }
+  @keyframes reducirMask {
+    0% {
+      width: 100vw;
+      height: 100vh; }
+    100% {
+      width: calc(100vw - 160px);
+      height: calc(100vh - 100px); } } }
+
+@-webkit-keyframes ampliarMask {
+  0% {
+    width: calc(100vw - 30px);
+    height: calc(100vh - 30px); }
+  100% {
+    width: 100vw;
+    height: 100vh; } }
+
+@keyframes ampliarMask {
+  0% {
+    width: calc(100vw - 30px);
+    height: calc(100vh - 30px); }
+  100% {
+    width: 100vw;
+    height: 100vh; } }
+
+@media screen and (min-width: 400px) {
+  @-webkit-keyframes ampliarMask {
+    0% {
+      width: calc(100vw - 50px);
+      height: calc(100vh - 100px); }
+    100% {
+      width: 100vw;
+      height: 100vh; } }
+  @keyframes ampliarMask {
+    0% {
+      width: calc(100vw - 50px);
+      height: calc(100vh - 100px); }
+    100% {
+      width: 100vw;
+      height: 100vh; } } }
+
+@media screen and (min-width: 1024px) {
+  @-webkit-keyframes ampliMask {
+    0% {
+      width: calc(100vw - 160px);
+      height: calc(100vh - 100px); }
+    100% {
+      width: 100vw;
+      height: 100vh; } }
+  @keyframes ampliMask {
+    0% {
+      width: calc(100vw - 160px);
+      height: calc(100vh - 100px); }
+    100% {
+      width: 100vw;
+      height: 100vh; } } }

@@ -358,17 +358,76 @@ td,
 th {
   padding: 0; }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes fadIn {
+  0% {
+    color: rgba(255, 255, 255, 0); }
+  100% {
+    color: rgba(255, 255, 255, 0.6); } }
+
+@keyframes fadIn {
+  0% {
+    color: rgba(255, 255, 255, 0); }
+  100% {
+    color: rgba(255, 255, 255, 0.6); } }
+
 .container {
   width: 100%;
   height: 100vh;
   background-color: white;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .mask {
-  width: 100%;
-  height: 100%; }
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: black; }
 
 .wrapper {
+  position: absolute;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -376,12 +435,13 @@ th {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 80%;
-  height: 80vh;
-  margin: auto;
-  margin-top: 10vh;
-  position: relative;
+  width: calc(100vw - 70px);
+  height: calc(100vh - 70px);
   background-color: black; }
+  @media screen and (min-width: 400px) {
+    .wrapper {
+      width: calc(100vw - 100px);
+      height: calc(100vh - 100px); } }
   @media screen and (min-width: 1024px) {
     .wrapper {
       -webkit-box-orient: horizontal;
@@ -390,10 +450,11 @@ th {
       flex-direction: row;
       -webkit-box-align: center;
       -ms-flex-align: center;
-      align-items: center; } }
+      align-items: center;
+      width: calc(100vw - 250px);
+      height: calc(100vh - 130px); } }
   .wrapper-left {
-    height: 80vh;
-    padding: 20px 15px;
+    height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -404,8 +465,12 @@ th {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }
+    @media screen and (min-width: 400px) {
+      .wrapper-left {
+        height: 100vh; } }
     @media screen and (min-width: 768px) {
       .wrapper-left {
+        height: 70vh;
         padding: 80px 80px; } }
     @media screen and (min-width: 1024px) {
       .wrapper-left {
@@ -422,8 +487,7 @@ th {
     position: absolute; }
     @media screen and (min-width: 1024px) {
       .wrapper-right {
-        position: relative;
-        width: 50%;
+        width: 40%;
         height: 100%; } }
   .wrapper-top {
     display: -webkit-box;
@@ -452,7 +516,7 @@ th {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-bottom: 110px;
+    margin-bottom: 0px;
     z-index: 1; }
     @media screen and (min-width: 768px) {
       .wrapper-bottom {
@@ -470,14 +534,16 @@ th {
 
 .enova-img {
   width: 110px;
-  height: auto; }
+  height: auto;
+  opacity: 0; }
   @media screen and (min-width: 1440px) {
     .enova-img {
       width: 160px; } }
 
 .enova-separador {
   color: white;
-  margin: 0 15px; }
+  margin: 0 15px;
+  opacity: 0; }
   @media screen and (min-width: 1024px) {
     .enova-separador {
       margin: 0 25px; } }
@@ -490,7 +556,8 @@ th {
   color: white;
   letter-spacing: 6px;
   font-weight: 300;
-  font-size: 8px; }
+  font-size: 8px;
+  opacity: 0; }
   @media screen and (min-width: 1440px) {
     .enova-slogan {
       font-size: 14px; } }
@@ -514,8 +581,8 @@ th {
       font-size: 30px; } }
 
 .enova-btn {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: solid 2px #e1ba65;
   display: -webkit-box;
@@ -527,7 +594,12 @@ th {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  opacity: 0;
   cursor: pointer; }
+  @media screen and (min-width: 480px) {
+    .enova-btn {
+      width: 50px;
+      height: 50px; } }
   @media screen and (min-width: 1440px) {
     .enova-btn {
       width: 60px;
@@ -535,25 +607,58 @@ th {
 
 .enova-icon {
   color: #e1ba65;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 16px; }
+  @media screen and (min-width: 480px) {
+    .enova-icon {
+      font-size: 18px; } }
   @media screen and (min-width: 1440px) {
     .enova-icon {
       font-size: 24px; } }
 
-@-webkit-keyframes fadIn {
-  0% {
-    color: rgba(255, 255, 255, 0); }
-  100% {
-    color: rgba(255, 255, 255, 0.6); } }
-
-@keyframes fadIn {
-  0% {
-    color: rgba(255, 255, 255, 0); }
-  100% {
-    color: rgba(255, 255, 255, 0.6); } }
-
-.fadeIn {
+.fadeInText {
   -webkit-animation: fadIn 2s;
   animation: fadIn 2s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards; }
+
+.reducir {
+  -webkit-animation: reducirMask 2s cubic-bezier(0, 0, 0.58, 2) 0s 1;
+  animation: reducirMask 2s cubic-bezier(0, 0, 0.58, 2) 0s 1;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.ampliar {
+  -webkit-animation: ampliarMask 2s cubic-bezier(0.58, 0.2, 0.57, 1) 0s 1;
+  animation: ampliarMask 2s cubic-bezier(0.58, 0.2, 0.57, 1) 0s 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.fadeIn {
+  -webkit-animation: fadeIn 2s;
+  animation: fadeIn 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.fadeOut {
+  -webkit-animation: fadeOut 2s;
+  animation: fadeOut 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.figure {
+  width: 100%;
+  height: 100%; }
+
+.canvas {
+  background-color: tomato; }
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }

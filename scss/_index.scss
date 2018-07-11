@@ -3,31 +3,52 @@
     height: 100vh;
     background-color: white;
     overflow: hidden;
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .mask{
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
 }
 .wrapper{
+    position: absolute;
+    z-index: 10;
     display: flex;
     flex-direction: column;
-    width: 80%;
-    height: 80vh;
-    margin: auto;
-    margin-top: 10vh;
-    position: relative;
+    width: calc(100vw - 70px);
+    height: calc(100vh - 70px);
+
     background-color: black;
+    ///padding: 10px;
+    @include desde(400px){
+      width: calc(100vw - 100px);
+      height: calc(100vh - 100px);
+    }
     @include desde(md){
         flex-direction: row;
         align-items: center;
+        //padding: 30px 90px;
+        width: calc(100vw - 250px);
+        height: calc(100vh - 130px);
     }
     &-left{
-        height: 80vh;
-        padding: 20px 15px;
+        height: 100%;
+        //padding: 20px 15px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @include desde(400px){
+          height: 100vh;
+        }
         @include desde(sm){
+            height: 70vh;
             padding: 80px 80px;
         }
         @include desde(md){
@@ -47,8 +68,7 @@
         //background-color: tomato;
         position: absolute;
         @include desde(md){
-            position: relative;
-            width: 50%;
+            width: 40%;
             height: 100%
         }
     }
@@ -79,7 +99,7 @@
         display: flex;
         align-items: center;
         //background-color: teal;
-        margin-bottom: 110px;
+        margin-bottom: 0px;
         z-index: 1;
         @include desde(sm){
             margin-bottom: 50px;
@@ -102,6 +122,7 @@
     &-img{
         width: 110px;
         height: auto;
+        opacity: 0;
         @include desde(xl){
             width: 160px;
         }
@@ -109,6 +130,7 @@
     &-separador{
         color: white;
         margin: 0 15px;
+        opacity: 0;
         @include desde(md){
             margin: 0 25px;
         }
@@ -122,6 +144,7 @@
         letter-spacing: 6px;
         font-weight: 300;
         font-size: 8px;
+        opacity: 0;
         @include desde(sm){
 
         }
@@ -148,14 +171,19 @@
         }
     }
     &-btn{
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         border: solid 2px #e1ba65;
         display: flex;
         justify-content: center;
         align-items: center;
+        opacity: 0;
         cursor: pointer;
+        @include desde(xs){
+          width: 50px;
+          height: 50px;
+        }
         @include desde(xl){
             width: 60px;
             height: 60px;
@@ -164,6 +192,10 @@
     &-icon{
         color: #e1ba65;
         cursor: pointer;
+        font-size: 16px;
+        @include desde(xs){
+          font-size: 18px;
+        }
         @include desde(xl){
             font-size: 24px;
         }
@@ -171,16 +203,41 @@
 
 }
 
-@keyframes fadIn {
-  0% {
-    color: rgba(white, 0);
-  }
-  100% {
-    color: rgba(white, .6);
-  }
-}
-
-.fadeIn {
+.fadeInText {
    animation: fadIn 2s;
    animation-fill-mode: forwards;
+}
+.reducir{
+  animation: reducirMask 2s cubic-bezier(0,0,0.58,2) 0s 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.ampliar{
+  animation:  ampliarMask 2s cubic-bezier(0.58, 0.2, 0.57, 1) 0s 1;;
+  animation-fill-mode: forwards;
+}
+
+.fadeIn{
+  animation:  fadeIn 2s;
+  animation-fill-mode: forwards;
+}
+.fadeOut{
+  animation: fadeOut 2s;
+  animation-fill-mode: forwards;
+}
+
+.figure{
+  width: 100%;
+  height: 100%;
+}
+.canvas{
+  background-color: tomato;
+}
+
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
